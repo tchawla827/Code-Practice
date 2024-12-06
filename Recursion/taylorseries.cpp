@@ -1,0 +1,36 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+double e(int x, int n)
+{
+    static double p=1;
+    static double f=1;
+    
+     double r;
+
+    if(n==0)
+    return 1;
+
+    else
+    {
+       r=e(x,n-1);
+       p=p*x;
+       f=f*n;
+      
+       return r+p/f;
+    }
+}
+
+int main()
+{
+    cout<<"ENTER NUMBER OF TERMS OF TAYLOR SERIES : ";
+    int n;
+    cin>>n;
+    int x;
+    cout<<"ENTER VALUE OF X : ";
+    cin>>x;
+
+    cout<<"TAYLOR SERIES SUM = "<<e(x,n);
+
+}
